@@ -1,7 +1,12 @@
-html {
+/* html {
   background-color: #282c34;
 }
 
 .App {
   text-align: center;
+} */
+
+.map-container {
+  width: 100vw;
+  height: 400px;
 }

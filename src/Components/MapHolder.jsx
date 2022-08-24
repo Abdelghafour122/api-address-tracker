@@ -1,12 +1,17 @@
 import React from "react";
-import { MapContainer } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import Map from "./Map";
 
-const MapHolder = () => {
+const MapHolder = ({ coordinates }) => {
   return (
     <div className="map-holder">
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-        <Map />
+      <MapContainer
+        className="map-container"
+        center={[51.505, -0.09]}
+        zoom={13}
+        scrollWheelZoom={false}
+      >
+        <Map coordinates={coordinates} />
       </MapContainer>
     </div>
   );

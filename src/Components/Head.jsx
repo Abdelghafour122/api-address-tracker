@@ -2,10 +2,10 @@ import React from "react";
 import LocationInfo from "./LocationInfo";
 import Search from "./Search";
 
-const Head = () => {
+const Head = ({ handleChangeIpAddress }) => {
   return (
     <div className="head">
-      <Search />
+      <Search handleChangeIpAddress={handleChangeIpAddress} />
       <LocationInfo />
     </div>
   );
