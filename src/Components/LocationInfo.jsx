@@ -1,23 +1,26 @@
 import React from "react";
 
-const LocationInfo = () => {
+const LocationInfo = ({ otherData }) => {
   return (
     <div className="location-info">
       <div className="section">
         <p>IP Address</p>
-        <p></p>
+        <p> {otherData.ipAddress} </p>
       </div>
       <div className="section">
         <p>Location</p>
-        <p></p>
+        <p>
+          {`${otherData.city}, ${otherData.region}`} <br /> {otherData.zip}
+        </p>
       </div>
       <div className="section">
         <p>Timezone</p>
-        <p>UTC</p> {/* add the utc from the api*/}
+        {/* <p>UTC</p> */}
+        <p> {otherData.timezone} </p>
       </div>
       <div className="section">
         <p>ISP</p>
-        <p></p>
+        <p> {otherData.isp} </p>
       </div>
     </div>
   );

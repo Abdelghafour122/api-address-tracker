@@ -15,6 +15,7 @@ const Search = ({ handleChangeIpAddress }) => {
     validIpAddress
       ? handleChangeIpAddress(searchValue)
       : alert("Invalid Ip Address!");
+    setSearchValue("");
   };
 
   useEffect(() => {

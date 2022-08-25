@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Head from "./Components/Head";
 import MapHolder from "./Components/MapHolder";
+import Attribution from "./Components/Attribution";
 
 function App() {
   const [ipAddress, setIpAddress] = useState("");
-  const [location, setLocation] = useState("");
-  const [timezone, setTimezone] = useState(""); //FILL OTHER STATES LATER
+  const [city, setCity] = useState("");
+  const [region, setRegion] = useState("");
+  const [zip, setZip] = useState("");
+  const [isp, setIsp] = useState("");
+  const [timezone, setTimezone] = useState("");
 
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
 
@@ -21,7 +25,11 @@ function App() {
         .then((data) => {
           ipAddress || setIpAddress(data.query);
           setCoordinates({ lat: data.lat, lng: data.lon });
-          // SET OTHER STATES LATER
+          setCity(data.city);
+          setRegion(data.regionName);
+          setIsp(data.isp);
+          setTimezone(data.timezone);
+          setZip(data.zip);
         });
     };
     getPosition();
@@ -29,12 +37,13 @@ function App() {
 
   return (
     <main className="App">
-      {/* PASS OTHER STATES LATER */}
       <Head
         coordinates={coordinates}
+        otherData={{ ipAddress, city, region, isp, timezone, zip }}
         handleChangeIpAddress={handleChangeIpAddress}
       />
       <MapHolder coordinates={coordinates} />
+      <Attribution />
     </main>
   );
 }

@@ -1,24 +1,19 @@
+import { marker } from "leaflet";
 import React, { useEffect } from "react";
 import { TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
+import locationIcon from "../Images/icon-location.svg";
 
 const Map = ({ coordinates }) => {
   const map = useMapEvents({
     click: () => map.locate(),
-    locationfound: (location) => map.flyTo(location.latlng),
+    locationfound: (location) => {
+      map.flyTo(location.latlng);
+    },
   });
-
-  // const checkValidCoordinates = () => {
-  //   if (coordinates.lat === 0 && coordinates.lng === 0) {
-  //     return true;
-  //   } else return false;
-  // };
-
-  const helperMap = useMap();
 
   useEffect(() => {
     if (coordinates.lat !== 0 && coordinates.lng !== 0) {
       map.flyTo(coordinates);
-      // helperMap.
     }
   }, [coordinates, map]);
 

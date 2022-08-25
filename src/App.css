@@ -1,11 +1,103 @@
-/* html {
-  background-color: #282c34;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --vd-gray: hsl(0, 0%, 17%);
+  --d-gray: hsl(0, 0%, 59%);
+  --input-fs: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Rubik";
+}
+
+a {
+  text-decoration: none;
+  color: royalblue;
 }
 
 .App {
-  text-align: center;
-} */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
+.head {
+  width: 100%;
+  text-align: center;
+  background-image: url(./Images/pattern-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  flex-grow: 1;
+}
+
+.head .search {
+}
+.head .search p {
+  font-size: 20px;
+  color: #fff;
+}
+.head .search .search-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head .search .search-field input {
+  padding: 15px 20px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border: none;
+  font-family: inherit;
+  font-size: var(--input-fs);
+  flex-basis: 49%;
+  outline: none;
+}
+
+.head .search .search-field button {
+  padding: 19px 23px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border: none;
+  background-color: var(--vd-gray);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* TRY GRID */
+.head .location-info {
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  z-index: 99999999999;
+  transform: translateX(-50%);
+}
+
+.head .location-info .section {
+}
+
+.head .location-info .section:not(:last-of-type) {
+  border-right: 1px solid grey;
+}
+
+.head .location-info .section p:first-of-type {
+  color: var(--d-gray);
+}
+
+.head .location-info .section p:nth-of-type(2) {
+  color: var(--vd-gray);
+}
 .map-container {
   width: 100vw;
   height: 400px;
