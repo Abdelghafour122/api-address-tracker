@@ -15,7 +15,6 @@ const LocationInfo = ({ otherData }) => {
       </div>
       <div className="section">
         <p>Timezone</p>
-        {/* <p>UTC</p> */}
         <p> {otherData.timezone} </p>
       </div>
       <div className="section">
