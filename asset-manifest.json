@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/api-address-tracker/static/css/main.fe2217d2.css",
+    "main.js": "/api-address-tracker/static/js/main.99b3eb54.js",
+    "static/media/pattern-bg.png": "/api-address-tracker/static/media/pattern-bg.a60a3c85aa8b88aac4b7.png",
+    "index.html": "/api-address-tracker/index.html",
+    "static/media/icon-arrow.svg": "/api-address-tracker/static/media/icon-arrow.2eaaa5ee3602d5aa14a2dba69e9fb7a0.svg",
+    "main.fe2217d2.css.map": "/api-address-tracker/static/css/main.fe2217d2.css.map",
+    "main.99b3eb54.js.map": "/api-address-tracker/static/js/main.99b3eb54.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe2217d2.css",
+    "static/js/main.99b3eb54.js"
+  ]
+}
