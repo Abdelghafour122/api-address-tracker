@@ -1,4 +1,3 @@
-import { marker } from "leaflet";
 import React, { useEffect } from "react";
 import { TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
 import locationIcon from "../Images/icon-location.svg";

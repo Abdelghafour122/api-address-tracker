@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Head from "./Components/Head";
 import MapHolder from "./Components/MapHolder";
-import Attribution from "./Components/Attribution";
 
 function App() {
   const [ipAddress, setIpAddress] = useState("");
@@ -23,6 +22,10 @@ function App() {
       await fetch(`http://ip-api.com/json/${ipAddress}`)
         .then((res) => res.json())
         .then((data) => {
+          if (data.status === "fail") {
+            alert("something went wrong, try again");
+            return;
+          }
           ipAddress || setIpAddress(data.query);
           setCoordinates({ lat: data.lat, lng: data.lon });
           setCity(data.city);
@@ -30,7 +33,8 @@ function App() {
           setIsp(data.isp);
           setTimezone(data.timezone);
           setZip(data.zip);
-        });
+        })
+        .catch((err) => console.log(err));
     };
     getPosition();
   }, [ipAddress]);
