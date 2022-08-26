@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
-import locationIcon from "../Images/icon-location.svg";
+import { TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 
 const Map = ({ coordinates }) => {
   const map = useMapEvents({
