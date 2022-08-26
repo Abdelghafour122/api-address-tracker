@@ -43,7 +43,6 @@ function App() {
         handleChangeIpAddress={handleChangeIpAddress}
       />
       <MapHolder coordinates={coordinates} />
-      <Attribution />
     </main>
   );
 }
